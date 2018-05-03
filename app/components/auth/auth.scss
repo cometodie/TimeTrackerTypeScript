@@ -1,0 +1,9 @@
+@import '../../sharedStyles/wrapper';
+
+form {
+  display: flex;
+  flex-flow: column;
+  .submit-button {
+    margin: 15px auto;
+  }
+}

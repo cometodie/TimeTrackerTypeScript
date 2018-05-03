@@ -1,0 +1,54 @@
+.card {
+  margin: 0 auto 15px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  h2{
+    margin: 0 0 15px;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    svg {
+      cursor: pointer;
+    }
+    h2 {
+      text-align: center;
+      margin: 0 0 5px;
+    }
+  }
+}
+
+.add-button {
+  display: flex !important;
+  max-width: 100px;
+  margin: 0 auto;
+}
+
+.min-height {
+  min-height: 505px;
+}
+
+.days-name {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  margin: 15px 0 0 55px;
+  div {
+    @media screen and (min-width: 550px) {
+      margin: 0 15px;
+    }
+    font-weight: bold;
+  }
+  div:nth-of-type(6), div:nth-of-type(7){
+    color: red;
+  }
+}
+
+.flex-row {
+  display: flex;
+  align-items: flex-end;
+  span:first-child {
+    margin: 0 10px 10px 0;
+  }
+}
