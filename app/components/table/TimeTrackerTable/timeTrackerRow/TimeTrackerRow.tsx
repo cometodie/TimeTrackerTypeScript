@@ -7,7 +7,6 @@ require('./timeTrackerRow.scss');
 class TimeTrackerRow extends React.Component<Table.IWeekProps, Table.IWeekState> {
   constructor(props: Table.IWeekProps) {
     super(props);
-    console.log('Week props', props);
     this.state = {
       days: [],
     };

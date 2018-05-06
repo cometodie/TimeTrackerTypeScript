@@ -21,7 +21,6 @@ class TimeTrackerTable extends React.Component<Table.ITableProps, Table.ITableSt
     super(props);
     this.nextMonth = this.nextMonth.bind(this);
     this.prevMonth = this.prevMonth.bind(this);
-    console.log('Table props', props);
     this.state = {
       month: [],
       nameOfMonth: ''
@@ -30,7 +29,6 @@ class TimeTrackerTable extends React.Component<Table.ITableProps, Table.ITableSt
 
   componentWillReceiveProps(props: Table.ITableProps) {
     const month: Table.IDay[] = getMonthArray(props.currentYear, props.currentMonth, props.timeStore);
-    console.log('month', month);
     this.setState( (prevState) => {
       return {
         month: month,

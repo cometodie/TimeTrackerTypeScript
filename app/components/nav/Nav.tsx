@@ -4,7 +4,6 @@ import IconButton from 'material-ui/IconButton';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
 
 import { connect, Dispatch } from 'react-redux';
-// import { toggleSidebar } from 'actions/utilities';
 import { Link, BrowserRouter } from 'react-router-dom';
 import { IStore } from '../../store/store';
 import { toggleSidebar, IUtilActions } from '../../actions/utilities';

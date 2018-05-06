@@ -47,7 +47,7 @@ namespace Table {
 
   export interface ITime {
     id: string;
-    date: Date;
+    date: string;
     time: number;
   }
 

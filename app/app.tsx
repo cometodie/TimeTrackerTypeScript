@@ -2,17 +2,16 @@ import * as React from 'react';
 import Nav from './components/nav/Nav';
 import SideBar from './components/utilities/sideBar/SideBar';
 import SnackBar from './components/utilities/snackBar/SnackBar';
-// import Loader from 'utilities/preLoader/Loader';
 import * as routes from '../constants/routes';
-// import SignUpPage from 'components/auth/SignUp';
-// import SignInForm from 'components/auth/SignIn';
+import SignUpPage from './components/auth/SignUp';
 import withAuthentication from './components/sessions/withAuthentication';
 import HomeContainer from './containers/HomeContainer';
-// import TimeTrackerAddContainer from 'containers/TimeTrackerAddContainer';
+import TimeTrackerAddContainer from './containers/TimeTrackerAddContainer';
 
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
-// import SignInContainer from 'containers/SignInContainer';
-// import NotFoundCountainer from 'containers/NotFoundCountainer';
+import SignInContainer from './containers/SignInContainer';
+import NotFoundCountainer from './containers/NotFoundCountainer';
+import SignUpContainer from './containers/SignUpContainer';
 
 require('./app.scss');
 
@@ -25,10 +24,10 @@ const App = () => (
       <SideBar />
       <Switch>
         <Route exact path={routes.HOME} component={HomeContainer} />
-        {/* <Route exact path={routes.ADD} component={TimeTrackerAddContainer} />
         <Route exact path={routes.SIGN_IN} component={SignInContainer} />
-        <Route exact path={routes.SIGN_UP} component={SignUpPage} />
-        <Route path="*" component={NotFoundCountainer} /> */}
+        <Route exact path={routes.SIGN_UP} component={SignUpContainer} />
+        <Route exact path={routes.ADD} component={TimeTrackerAddContainer} />
+        <Route path="*" component={NotFoundCountainer} />
       </Switch>
       <SnackBar />
     </div>

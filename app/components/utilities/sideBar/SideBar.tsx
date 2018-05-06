@@ -3,23 +3,34 @@ import Paper from 'material-ui/Paper';
 import NavigationAuth from './NavigationAuth';
 import NavigationNonAuth from './NavigationNonAuth';
 
-import { connect } from 'react-redux';
-// import { setAuthUser } from 'actions/sessionActions';
+import { connect, Dispatch } from 'react-redux';
 import { auth } from '../../../../config/firebase';
-import { toggleSidebar, setSnackBar } from '../../../actions/utilities';
-import { clearTimeStore } from '../../../actions/timeActions';
-import { set } from '../../../actions/sessionActions';
+import { toggleSidebar, setSnackBar, IUtilActions } from '../../../actions/utilities';
+import { clearTimeStore, ITimeClear } from '../../../actions/timeActions';
 import { IStore } from '../../../store/store';
 import { User } from 'firebase';
-// import { clearTimeStore } from 'actions/timeActions';
-// import { setSnackBar } from 'actions/utilities';
+import { set } from '../../../actions/sessionActions';
 
-class SideBar extends React.Component<any, any> {
-  constructor(props: any) {
+interface ISideBarProps {
+  authUser: User;
+  isOpen: boolean;
+  setSnackBar: (state: string) => void;
+  toggleSidebar: (state: boolean) => void;
+  onLogout: () => ITimeClear;
+}
+
+/* Many css properties */
+interface ISideBarState {
+  stylePaper: any;
+  styleWrapper: any;
+}
+
+class SideBar extends React.Component<ISideBarProps, ISideBarState> {
+  constructor(props: ISideBarProps) {
+    console.log('sidebar', props);
     super(props);
     this.openSideBar = this.openSideBar.bind(this);
     this.logout = this.logout.bind(this);
-    console.log('sidebar', props);
     this.state = {
       stylePaper: {
         display: 'inline-block',
@@ -86,8 +97,7 @@ export default connect(
       setSnackBar: (state: string) => {
         dispatch(setSnackBar(state));
       },
-      onLogout: () => dispatch(clearTimeStore()),
-      onSetAuthUser: (authUser: User) => dispatch(set(authUser))
+      onLogout: () => dispatch(clearTimeStore())
     };
   }
 )(SideBar);

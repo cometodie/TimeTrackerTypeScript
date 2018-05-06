@@ -5,7 +5,7 @@ import Table from '../models/table';
 
 export interface ISetTime {
   type: constants.TIME_SET;
-  payload: any;
+  payload: Table.ITime[];
 }
 
 export interface ISetYear {
@@ -56,7 +56,7 @@ export const prevYear = (): IPrevYear => {
   };
 };
 
-export const setTimeTrackerData = (payload: any): ISetTime => {
+export const setTimeTrackerData = (payload: Table.ITime[]): ISetTime => {
   return {
     type: constants.TIME_SET,
     payload: payload

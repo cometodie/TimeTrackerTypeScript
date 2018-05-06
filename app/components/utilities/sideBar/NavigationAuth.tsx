@@ -8,7 +8,13 @@ import ExitIcon from '../icons/ExitIcon';
 
 import { Link } from 'react-router-dom';
 
-const NavigationAuth = (props: any) => (
+interface INavigation {
+  email: string;
+  logout: () => void;
+  onItemClick: () => void;
+}
+
+const NavigationAuth = (props: INavigation) => (
   <Menu>
     <MenuItem containerElement={<Link to={routes.HOME} />} leftIcon={<HomeIcon />} primaryText="Home" />
     <MenuItem onClick={props.logout} leftIcon={<ExitIcon />} primaryText={`Logout ${props.email}`} />

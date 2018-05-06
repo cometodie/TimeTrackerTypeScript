@@ -7,7 +7,7 @@ import { ITimeState, TimeActions } from '../actions/timeActions';
 // }
 
 const INITIAL_TIME_STATE: ITimeState = {
-  userTime: [{ id: '0', date: new Date('03-01-2018'), time: 8 }]
+  userTime: [{ id: '0', date: '03-01-2018', time: 8 }]
 };
 
 export const timeTrackerReducer = (state = INITIAL_TIME_STATE, action: TimeActions): ITimeState => {

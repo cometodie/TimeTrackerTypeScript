@@ -1,9 +1,14 @@
-import React from 'react';
-import * as routes from 'constants/routes';
-import { Link } from 'react-router-dom';
+import * as React from 'react';
+import * as routes from '../../../../constants/routes';
+import { Link, RouteComponentProps } from 'react-router-dom';
+import { User } from 'firebase';
 require('./notFoundPage.scss');
 
-const NotFoundPage = props => {
+interface INFProps extends RouteComponentProps<void> {
+  authUser: User;
+}
+
+const NotFoundPage = (props: INFProps) => {
   return (
     <div className="notFoundBlock">
       <h1>Sorry, page not found</h1>

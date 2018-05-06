@@ -17,12 +17,9 @@ interface StateFromProps {
 const withAuthorization = (condition: Function) => (Component: typeof React.Component) => {
   class WithAuthorization extends React.Component<StateFromProps & RouteComponentProps<void>, {}> {
     componentDidMount() {
-      console.log('props: ', this.props);
       auth.onAuthStateChanged(authUser => {
         if (!condition(authUser)) {
           this.props.history.push(routes.SIGN_IN);
-        }else{
-          console.log('props: ', this.props);
         }
       });
     }
