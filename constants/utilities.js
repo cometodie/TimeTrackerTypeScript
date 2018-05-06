@@ -1,3 +1,0 @@
-export const TOGGLE_LOADING = 'TOGGLE_LOADING';
-export const TOGGLE_SIDEBAR = 'TOGGLE_SIDEBAR';
-export const SET_SNACKBAR = 'SET_SNACKBAR';
