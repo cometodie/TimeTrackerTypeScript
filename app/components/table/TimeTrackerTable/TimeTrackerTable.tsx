@@ -9,15 +9,15 @@ import * as date from '../../../../constants/date';
 import { connect } from 'react-redux';
 import { List, ListItem } from 'material-ui/List';
 import { Card, CardHeader } from 'material-ui/Card';
-import { ArrowLeftIcon }  from '../../utilities/icons/ArrowLeftIcon';
+import { ArrowLeftIcon } from '../../utilities/icons/ArrowLeftIcon';
 import { ArrowRightIcon } from '../../utilities/icons/ArrowRightIcon';
 import { getMonthArray } from '../../../helpers/monthLogic';
 import TimeTrackerRow from './timeTrackerRow/TimeTrackerRow';
-import Table from '../../../models/table'
+import Table from '../../../models/table';
 import './timeTrackerTable.scss';
 
-class TimeTrackerTable extends React.Component<Table.ITableProps, Table.ITableState> {
-  constructor(props: Table.ITableProps) {
+class TimeTrackerTable extends React.Component<Table.TableProps, Table.ITableState> {
+  constructor(props: Table.TableProps) {
     super(props);
     this.nextMonth = this.nextMonth.bind(this);
     this.prevMonth = this.prevMonth.bind(this);
@@ -27,9 +27,9 @@ class TimeTrackerTable extends React.Component<Table.ITableProps, Table.ITableSt
     };
   }
 
-  componentWillReceiveProps(props: Table.ITableProps) {
+  componentWillReceiveProps(props: Table.TableProps) {
     const month: Table.IDay[] = getMonthArray(props.currentYear, props.currentMonth, props.timeStore);
-    this.setState( (prevState) => {
+    this.setState(prevState => {
       return {
         month: month,
         countOfDays: month.length,
@@ -69,7 +69,7 @@ class TimeTrackerTable extends React.Component<Table.ITableProps, Table.ITableSt
       <Card className="card min-height">
         <h2>{this.props.currentYear}</h2>
         <div className="header">
-          <ArrowLeftIcon onClick={this.prevMonth}/>
+          <ArrowLeftIcon onClick={this.prevMonth} />
           <h2>{this.state.nameOfMonth}</h2>
           <ArrowRightIcon onClick={this.nextMonth} />
         </div>

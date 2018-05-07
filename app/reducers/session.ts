@@ -1,9 +1,9 @@
-import { User } from "firebase";
-import { IUserState, UserAction, AUTH_USER_SET } from "../actions/sessionActions";
+import { User } from 'firebase';
+import { IUserState, UserAction, AUTH_USER_SET } from '../actions/sessionActions';
 
 const INITIAL_STATE: IUserState = {
   authUser: null
-}
+};
 
 const sessionReducer = (state: IUserState = INITIAL_STATE, action: UserAction): IUserState => {
   switch (action.type) {

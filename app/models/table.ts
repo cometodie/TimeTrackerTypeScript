@@ -1,7 +1,7 @@
-import { User } from "firebase";
+import { User } from 'firebase';
 
 namespace Table {
-  export interface ITableProps {
+  export interface TableProps {
     authUser?: User;
     countOfDays?: number;
     currentMonth: number;
