@@ -52,7 +52,7 @@ class SignUpForm extends React.Component<ISignProps, ISignUpFormState> {
     };
   }
 
-  onSubmit(event: React.FormEvent<{}>) {
+  onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (
       passwdField.state.value === passwdConfField.state.value &&

@@ -1,6 +1,8 @@
 export const TOGGLE_LOADING = 'TOGGLE_LOADING';
 export type TOGGLE_LOADING = typeof TOGGLE_LOADING;
+
 export const TOGGLE_SIDEBAR = 'TOGGLE_SIDEBAR';
 export type TOGGLE_SIDEBAR = typeof TOGGLE_SIDEBAR;
+
 export const SET_SNACKBAR = 'SET_SNACKBAR';
 export type SET_SNACKBAR = typeof SET_SNACKBAR;

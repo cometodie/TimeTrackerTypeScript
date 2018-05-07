@@ -45,7 +45,7 @@ class SignInForm extends React.Component<ISignProps, ISignInFormState> {
     };
   }
 
-  onSubmit(event: React.FormEvent<{}>) {
+  onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     this.setState(
       {
