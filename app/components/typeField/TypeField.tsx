@@ -2,25 +2,25 @@ import * as React from 'react';
 import TextField from 'material-ui/TextField';
 
 interface ITypeFieldProps {
- value: string;
- type: string;
- name?: string;
- placeholder?: string;
- min?: number;
- max?: number;
+  value: string;
+  type: string;
+  name?: string;
+  placeholder?: string;
+  min?: number;
+  max?: number;
+  validate?: (value: string) => boolean;
 }
 
 interface ITypeFieldState extends ITypeFieldProps {
- valid: boolean;
+  valid: boolean;
 }
 
 class TypeField extends React.Component<ITypeFieldProps, ITypeFieldState> {
   constructor(props: ITypeFieldProps) {
     super(props);
-    var isValid = this.validate(props.value);
     this.state = {
       value: props.value,
-      valid: isValid,
+      valid: false,
       type: props.type,
       name: props.name,
       min: props.min,
@@ -29,12 +29,10 @@ class TypeField extends React.Component<ITypeFieldProps, ITypeFieldState> {
     };
     this.onChange = this.onChange.bind(this);
   }
-  validate(val: string) {
-    return val.length > 2;
-  }
+
   onChange(e: React.ChangeEvent<HTMLInputElement>) {
-    var val = e.target.value;
-    var isValid = this.validate(val);
+    let val = e.target.value;
+    let isValid = this.props.validate ? this.props.validate(val) : false;
     this.setState({ value: val, valid: isValid });
   }
   render() {
@@ -46,7 +44,7 @@ class TypeField extends React.Component<ITypeFieldProps, ITypeFieldState> {
         type={this.state.type}
         value={this.state.value}
         onChange={this.onChange}
-        // placeholder={this.state.placeholder}
+        // placeholder={this.state.placeholder}  <-- no interface for this
         min={this.state.min}
         max={this.state.max}
       />

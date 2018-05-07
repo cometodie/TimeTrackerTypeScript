@@ -75,6 +75,7 @@ class SignInForm extends React.Component<ISignProps, ISignInFormState> {
 
     return (
       <form onSubmit={this.onSubmit}>
+        <label>Email:</label>
         <TypeField
           value={email}
           ref={field => {
@@ -84,6 +85,7 @@ class SignInForm extends React.Component<ISignProps, ISignInFormState> {
           name="EmailAddress"
           placeholder="Email Address"
         />
+        <label>Password:</label>
         <TypeField
           value={password}
           ref={field => {
