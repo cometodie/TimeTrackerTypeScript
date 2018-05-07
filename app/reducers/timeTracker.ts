@@ -1,10 +1,5 @@
 import * as constants from '../../constants/timeTracker';
 import { ITimeState, TimeActions } from '../actions/timeActions';
-// import { TIME_CLEAR, TIME_SET, SET_MONTH, SET_YEAR, PREV_YEAR, NEXT_YEAR } from 'constants/timeTracker';
-
-// export interface ITimeState {
-//   authUser: User;
-// }
 
 const INITIAL_TIME_STATE: ITimeState = {
   userTime: [{ id: '0', date: '03-01-2018', time: 8 }]

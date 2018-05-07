@@ -59,14 +59,3 @@ namespace Table {
 }
 
 export default Table;
-
-//   export class LogTime {
-//     constructor(id: string, date: string, time: number) {
-//       this.id = id;
-//       this.date = new Date(date);
-//       this.time = time;
-//     }
-//     id: string;
-//     date: Date;
-//     time: number;
-//   }
