@@ -2,7 +2,7 @@ import * as React from 'react';
 import TimeTrackerCell from '../timeTrackerCell/TimeTrackerCell';
 import Table from '../../../../models/table';
 
-require('./timeTrackerRow.scss');
+import './timeTrackerRow.scss';
 
 class TimeTrackerRow extends React.Component<Table.IWeekProps, Table.IWeekState> {
   constructor(props: Table.IWeekProps) {

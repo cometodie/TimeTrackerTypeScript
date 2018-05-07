@@ -13,7 +13,7 @@ import SignInContainer from './containers/SignInContainer';
 import NotFoundCountainer from './containers/NotFoundCountainer';
 import SignUpContainer from './containers/SignUpContainer';
 
-require('./app.scss');
+import './app.scss';
 
 const App = () => (
   

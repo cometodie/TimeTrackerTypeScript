@@ -18,7 +18,7 @@ import { RaisedButton } from 'material-ui';
 import Table from '../../models/table';
 import { User } from 'firebase';
 
-require('./timeTracker.scss');
+import './timeTracker.scss';
 
 interface ITimeProps extends RouteComponentProps<void> {
   authUser: User;

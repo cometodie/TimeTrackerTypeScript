@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Table from '../../../../models/table';
-require('./timeTrackerCell.scss');
+import './timeTrackerCell.scss';
 
 class TimeTrackerCell extends React.Component<Table.IDayProps, Table.IDayState> {
   constructor(props: Table.IDayProps) {

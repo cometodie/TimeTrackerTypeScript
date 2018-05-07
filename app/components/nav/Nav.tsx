@@ -7,7 +7,7 @@ import { connect, Dispatch } from 'react-redux';
 import { Link, BrowserRouter } from 'react-router-dom';
 import { IStore } from '../../store/store';
 import { toggleSidebar, IUtilActions } from '../../actions/utilities';
-require('./nav.scss');
+import './nav.scss';
 
 interface INavProps {
   isOpen?: boolean;

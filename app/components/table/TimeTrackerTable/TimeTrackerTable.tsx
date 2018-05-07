@@ -14,7 +14,7 @@ import { ArrowRightIcon } from '../../utilities/icons/ArrowRightIcon';
 import { getMonthArray } from '../../../helpers/monthLogic';
 import TimeTrackerRow from './timeTrackerRow/TimeTrackerRow';
 import Table from '../../../models/table'
-require('./timeTrackerTable.scss');
+import './timeTrackerTable.scss';
 
 class TimeTrackerTable extends React.Component<Table.ITableProps, Table.ITableState> {
   constructor(props: Table.ITableProps) {

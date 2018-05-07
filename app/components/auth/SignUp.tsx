@@ -5,7 +5,7 @@ import * as routes from '../../../constants/routes';
 import { Link, withRouter, RouteComponentProps } from 'react-router-dom';
 import { auth } from '../../../config/firebase';
 import { validateEmail, validatePassword } from '../../helpers/validateLogic';
-require('./auth.scss');
+import './auth.scss';
 
 interface ISignProps extends RouteComponentProps<void> {
   setSnackBar: (text: string) => void;
