@@ -1,6 +1,6 @@
 import { connect, Dispatch } from 'react-redux';
-import { setSnackBar, IUtilActions } from '../actions/utilities';
-import { SignUpPage } from '../components/auth/SignUp';
+import { setSnackBar, IUtilActions } from 'actions/utilities';
+import { SignUpPage } from 'components/auth/SignUp';
 
 const mapDispatchToProps = (dispatch: Dispatch<IUtilActions>) => {
   return {

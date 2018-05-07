@@ -1,9 +1,9 @@
 import * as React from 'react';
-import TypeField from '../../components/typeField/TypeField';
+import TypeField from 'components/typeField/TypeField';
 import RaisedButton from 'material-ui/RaisedButton';
-import * as routes from '../../../constants/routes';
+import * as routes from 'constants/routes';
 import { Link, withRouter, RouteComponentProps } from 'react-router-dom';
-import { auth } from '../../../config/firebase';
+import { auth } from 'config/firebase';
 import { validateEmail, validatePassword } from '../../helpers/validateLogic';
 import './auth.scss';
 

@@ -1,12 +1,12 @@
 import * as React from 'react';
-import * as routes from '../../../constants/routes';
+import * as routes from 'constants/routes';
 
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
-import { auth } from '../../../config/firebase';
+import { auth } from 'config/firebase';
 import { User } from 'firebase';
-import { IStore } from '../../store/store';
+import { IStore } from 'store/store';
 
 interface StateFromProps {
   authUser: User;

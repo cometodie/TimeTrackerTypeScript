@@ -1,4 +1,4 @@
-import * as constants from '../../constants/utilities';
+import * as constants from 'constants/utilities';
 
 export interface ISetSnackBar {
   type: constants.SET_SNACKBAR;

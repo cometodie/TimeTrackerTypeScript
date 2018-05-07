@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as routes from '../../../../constants/routes';
+import * as routes from 'constants/routes';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { User } from 'firebase';
 import './notFoundPage.scss';

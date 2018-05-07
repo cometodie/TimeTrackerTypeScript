@@ -1,10 +1,10 @@
 import * as React from 'react';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
-import * as routes from '../../../../constants/routes';
+import * as routes from 'constants/routes';
 
-import HomeIcon from '../icons/HomeIcon';
-import ExitIcon from '../icons/ExitIcon';
+import HomeIcon from 'utilities/icons/HomeIcon';
+import ExitIcon from 'utilities/icons/ExitIcon';
 
 import { Link } from 'react-router-dom';
 

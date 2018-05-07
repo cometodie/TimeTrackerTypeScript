@@ -1,5 +1,5 @@
-import { TOGGLE_SIDEBAR } from '../../constants/utilities';
-import { IUtilActions } from '../actions/utilities';
+import { TOGGLE_SIDEBAR } from 'constants/utilities';
+import { IUtilActions } from 'actions/utilities';
 
 const sideBar = (state: boolean = false, action: IUtilActions) => {
   if (action.type === TOGGLE_SIDEBAR) {

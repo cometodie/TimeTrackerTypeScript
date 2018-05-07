@@ -1,10 +1,10 @@
-import Table from '../models/table';
+import Table from 'models/table';
 
 export const getMonthArray = (year: number, month: number, store: Table.ITime[]) => {
   const countDaysCurrentMonth = new Date(year, month, 0).getDate();
   const daysMonth: Table.IDay[] = [];
   for (let i = 1; i <= countDaysCurrentMonth; i++) {
-    let logDay = store.find((el) => {
+    let logDay = store.find(el => {
       let elDate = new Date(el.date);
       return elDate.getDate() === i && elDate.getMonth() + 1 === month && elDate.getFullYear() === year;
     });

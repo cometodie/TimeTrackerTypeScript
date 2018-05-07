@@ -1,5 +1,5 @@
-import { db } from '../../config/firebase';
-import Table from '../models/table';
+import { db } from 'config/firebase';
+import Table from 'models/table';
 
 export const doCreateTime = (id: string, date: string, time: number) => {
   db.ref(`/TimeTracker/${id}`).push({ date: date, time: time });

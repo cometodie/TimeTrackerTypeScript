@@ -1,17 +1,17 @@
 import * as React from 'react';
-import Nav from './components/nav/Nav';
-import SideBar from './components/utilities/sideBar/SideBar';
-import SnackBar from './components/utilities/snackBar/SnackBar';
-import * as routes from '../constants/routes';
-import SignUpPage from './components/auth/SignUp';
-import withAuthentication from './components/sessions/withAuthentication';
-import HomeContainer from './containers/HomeContainer';
-import TimeTrackerAddContainer from './containers/TimeTrackerAddContainer';
+import Nav from 'components/nav/Nav';
+import SideBar from 'components/utilities/sideBar/SideBar';
+import SnackBar from 'components/utilities/snackBar/SnackBar';
+import * as routes from 'constants/routes';
+import SignUpPage from 'components/auth/SignUp';
+import withAuthentication from 'components/sessions/withAuthentication';
+import HomeContainer from 'containers/HomeContainer';
+import TimeTrackerAddContainer from 'containers/TimeTrackerAddContainer';
 
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
-import SignInContainer from './containers/SignInContainer';
-import NotFoundCountainer from './containers/NotFoundCountainer';
-import SignUpContainer from './containers/SignUpContainer';
+import SignInContainer from 'containers/SignInContainer';
+import NotFoundCountainer from 'containers/NotFoundCountainer';
+import SignUpContainer from 'containers/SignUpContainer';
 
 import './app.scss';
 

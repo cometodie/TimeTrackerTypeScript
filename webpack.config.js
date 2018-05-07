@@ -10,42 +10,35 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
-      //загрузчик для jsx
-      // {
-      //   test: /\.jsx?$/, // определяем тип файлов
-      //   exclude: /(node_modules)/, // исключаем из обработки папку node_modules
-      //   loader: 'babel-loader', // определяем загрузчик
-      //   options: {
-      //     presets: ['env', 'react'], // используемые плагины
-      //     plugins: ['transform-object-rest-spread']
-      //   }
-      // },
+      {
+        test: /\.tsx?$/,
+        loader: 'awesome-typescript-loader'
+      },
       {
         test: /\.scss$/,
         loader: 'style-loader!css-loader!sass-loader'
       },
       {
         test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
-        loader: 'file-loader?name=favicon.ico' // <-- retain original file name
+        loader: 'file-loader?name=favicon.ico'
       }
     ]
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json'],
     alias: {
-      '@app': path.resolve(__dirname, 'app/')
-      // actions: path.resolve(path.join(__dirname, 'app/actions')),
-      // dbApi: path.resolve(__dirname, 'app/dbApi/'),
-      // components: path.resolve(__dirname, 'app/components/'),
-      // config: path.resolve(__dirname, 'config/'),
-      // containers: path.resolve(__dirname, 'app/containers/'),
-      // constants: path.resolve(__dirname, './constants/'),
-      // helpers: path.resolve(__dirname, 'app/helpers/'),
-      // utilities: path.resolve(__dirname, 'app/components/utilities'),
-      // table: path.resolve(__dirname, 'app/components/table'),
-      // sessions: path.resolve(__dirname, 'app/components/sessions')
-    }
+      actions: path.resolve(__dirname, './app/actions'),
+      dbApi: path.resolve(__dirname, './app/dbApi/'),
+      components: path.resolve(__dirname, './app/components'),
+      config: path.resolve(__dirname, './config/'),
+      containers: path.resolve(__dirname, './app/containers/'),
+      constants: path.resolve(__dirname, './constants/'),
+      helpers: path.resolve(__dirname, './app/helpers/'),
+      models: path.resolve(__dirname, './app/models/'),
+      utilities: path.resolve(__dirname, './app/components/utilities/'),
+      table: path.resolve(__dirname, './app/components/table'),
+      store: path.resolve(__dirname, './app/store')
+    },
+    extensions: ['.ts', '.tsx', '.js', '.json']
   },
   mode: 'development'
 };

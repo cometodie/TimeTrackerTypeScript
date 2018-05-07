@@ -2,8 +2,8 @@ import * as React from 'react';
 import Snackbar from 'material-ui/Snackbar';
 import RaisedButton from 'material-ui/RaisedButton';
 import { connect } from 'react-redux';
-import { setSnackBar, IUtilActions } from '../../../actions/utilities';
-import { IStore } from '../../../store/store';
+import { setSnackBar, IUtilActions } from 'actions/utilities';
+import { IStore } from 'store/store';
 import { User } from 'firebase';
 
 interface ISnackBarProps {

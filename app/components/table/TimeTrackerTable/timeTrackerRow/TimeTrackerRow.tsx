@@ -1,6 +1,6 @@
 import * as React from 'react';
-import TimeTrackerCell from '../timeTrackerCell/TimeTrackerCell';
-import Table from '../../../../models/table';
+import TimeTrackerCell from 'components/table/TimeTrackerTable/timeTrackerCell/TimeTrackerCell';
+import Table from 'models/table';
 
 import './timeTrackerRow.scss';
 
@@ -8,7 +8,7 @@ class TimeTrackerRow extends React.Component<Table.IWeekProps, Table.IWeekState>
   constructor(props: Table.IWeekProps) {
     super(props);
     this.state = {
-      days: [],
+      days: []
     };
   }
 

@@ -1,8 +1,8 @@
 import * as React from 'react';
 
 import { connect, Dispatch } from 'react-redux';
-import { auth } from '../../../config/firebase';
-import { set } from '../../actions/sessionActions';
+import { auth } from 'config/firebase';
+import { set } from 'actions/sessionActions';
 import { User } from 'firebase';
 
 interface MapDispatchToProps {

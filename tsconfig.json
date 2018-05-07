@@ -7,11 +7,20 @@
     "target": "es5",
     "lib": ["es6", "dom"],
     "jsx": "react",
-    "baseUrl": "./",
+    "baseUrl": ".",
+    // "pretty": true,
     "paths": {
-      "app/*": ["app/*"]
+      "actions/*": ["app/actions/*"],
+      "dbApi/*": ["app/dbApi/*"],
+      "components/*": ["app/components/*"],
+      "config/*": ["config/*"],
+      "containers/*": ["app/containers/*"],
+      "constants/*": ["constants/*"],
+      "models/*": ["app/models/*"],
+      "utilities/*": ["app/components/utilities/*"],
+      "store/*": ["app/store/*"],
     }
   },
-  "exclude": ["dist", "node_modules"]
-  // "include": ["./app"]
+  "exclude": ["dist", "node_modules"],
+  // "include": ["app/**/*"]
 }

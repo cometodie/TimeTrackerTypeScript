@@ -4,12 +4,12 @@ import NavigationAuth from './NavigationAuth';
 import NavigationNonAuth from './NavigationNonAuth';
 
 import { connect, Dispatch } from 'react-redux';
-import { auth } from '../../../../config/firebase';
-import { toggleSidebar, setSnackBar, IUtilActions } from '../../../actions/utilities';
-import { clearTimeStore, ITimeClear } from '../../../actions/timeActions';
-import { IStore } from '../../../store/store';
+import { auth } from 'config/firebase';
+import { toggleSidebar, setSnackBar, IUtilActions } from 'actions/utilities';
+import { clearTimeStore, ITimeClear } from 'actions/timeActions';
+import { IStore } from 'store/store';
 import { User } from 'firebase';
-import { set } from '../../../actions/sessionActions';
+import { set } from 'actions/sessionActions';
 
 interface ISideBarProps {
   authUser: User;

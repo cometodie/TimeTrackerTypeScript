@@ -5,8 +5,8 @@ import NavigationClose from 'material-ui/svg-icons/navigation/close';
 
 import { connect, Dispatch } from 'react-redux';
 import { Link, BrowserRouter } from 'react-router-dom';
-import { IStore } from '../../store/store';
-import { toggleSidebar, IUtilActions } from '../../actions/utilities';
+import { IStore } from 'store/store';
+import { toggleSidebar, IUtilActions } from 'actions/utilities';
 import './nav.scss';
 
 interface INavProps {

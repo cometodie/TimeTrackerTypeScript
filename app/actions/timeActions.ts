@@ -1,7 +1,7 @@
-import * as constants from '../../constants/timeTracker';
+import * as constants from 'constants/timeTracker';
 import { Dispatch } from 'react-redux';
 import { User } from 'firebase';
-import Table from '../models/table';
+import Table from 'models/table';
 
 export interface ISetTime {
   type: constants.TIME_SET;
