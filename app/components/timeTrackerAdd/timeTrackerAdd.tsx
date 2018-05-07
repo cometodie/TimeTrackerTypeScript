@@ -56,7 +56,6 @@ class TimeTrackerAdd extends React.Component<ITimeProps, ITimeState> {
   }
 
   back() {
-    console.log(this.props);
     this.props.history.push(routes.HOME);
   }
 

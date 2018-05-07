@@ -24,7 +24,7 @@ let emailField: TypeField;
 let passwdField: TypeField;
 let passwdConfField: TypeField;
 
-const SignUpPage = (props: ISignProps) => (
+const SignUpPage: React.SFC<ISignProps> = (props: ISignProps) => (
   <div className="container">
     <div className="page-wrapper">
       <h1>SignUp</h1>
@@ -33,7 +33,7 @@ const SignUpPage = (props: ISignProps) => (
   </div>
 );
 
-const SignUpLink = () => (
+const SignUpLink: React.SFC<object> = () => (
   <p>
     Don't have an account? <Link to={routes.SIGN_UP}>Sign Up</Link>
   </p>

@@ -21,7 +21,7 @@ interface ISignInFormState {
   error: Error;
 }
 
-const SignInPage = (props: ISignProps) => (
+const SignInPage: React.SFC<ISignProps> = (props: ISignProps) => (
   <div className="container">
     <div className="page-wrapper">
       <h1>SignIn</h1>

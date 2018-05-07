@@ -49,7 +49,6 @@ export const nextYear = (): INextYear => {
   };
 };
 
-
 export const prevYear = (): IPrevYear => {
   return {
     type: constants.PREV_YEAR
@@ -63,7 +62,7 @@ export const setTimeTrackerData = (payload: Table.ITime[]): ISetTime => {
   };
 };
 
-export const setTimeMonth = (payload: number, dispatch: Dispatch): ISetMonth =>  {
+export const setTimeMonth = (payload: number, dispatch: Dispatch): ISetMonth => {
   if (payload > 12) {
     dispatch(nextYear());
     payload = 1;
@@ -82,8 +81,7 @@ export const setTimeYear = (payload: number): ISetYear => {
 };
 
 export const clearTimeStore = (): ITimeClear => {
-    return {
-      type: constants.TIME_CLEAR
-    };
+  return {
+    type: constants.TIME_CLEAR
   };
-
+};

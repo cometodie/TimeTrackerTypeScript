@@ -1,28 +1,21 @@
 import * as constants from '../../constants/utilities';
 
 export interface ISetSnackBar {
-    type: constants.SET_SNACKBAR;
-    payload: string;
-  }
-  
-  export interface IToggleLoading {
-    type: constants.TOGGLE_LOADING;
-    payload: boolean;
-  }
-  
-  export interface IToggleSideBar {
-    type: constants.TOGGLE_SIDEBAR;
-    payload: boolean;
-  }
+  type: constants.SET_SNACKBAR;
+  payload: string;
+}
 
-  export type IUtilActions = ISetSnackBar | IToggleLoading | IToggleSideBar;
+export interface IToggleLoading {
+  type: constants.TOGGLE_LOADING;
+  payload: boolean;
+}
 
-// export const setLoading = status => {
-//   return {
-//     type: TOGGLE_LOADING,
-//     payload: status
-//   };
-// };
+export interface IToggleSideBar {
+  type: constants.TOGGLE_SIDEBAR;
+  payload: boolean;
+}
+
+export type IUtilActions = ISetSnackBar | IToggleLoading | IToggleSideBar;
 
 export const toggleSidebar = (status: boolean): IToggleSideBar => {
   return {
@@ -44,10 +37,3 @@ export const setLoading = (status: boolean): IToggleLoading => {
     payload: status
   };
 };
-
-// export const setSnackBar = status => {
-//   return {
-//     type: SET_SNACKBAR,
-//     payload: status
-//   };
-// };

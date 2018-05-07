@@ -14,7 +14,7 @@ interface INavigation {
   onItemClick: () => void;
 }
 
-const NavigationAuth = (props: INavigation) => (
+const NavigationAuth: React.SFC<INavigation> = (props: INavigation) => (
   <Menu>
     <MenuItem containerElement={<Link to={routes.HOME} />} leftIcon={<HomeIcon />} primaryText="Home" />
     <MenuItem onClick={props.logout} leftIcon={<ExitIcon />} primaryText={`Logout ${props.email}`} />

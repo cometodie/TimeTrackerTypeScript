@@ -8,7 +8,7 @@ interface INFProps extends RouteComponentProps<void> {
   authUser: User;
 }
 
-const NotFoundPage = (props: INFProps) => {
+const NotFoundPage: React.SFC<INFProps> = (props: INFProps) => {
   return (
     <div className="notFoundBlock">
       <h1>Sorry, page not found</h1>
