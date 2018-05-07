@@ -1,11 +1,9 @@
-import { TOGGLE_SIDEBAR } from 'constants/utilities';
-import { IUtilActions } from 'actions/utilities';
+import * as constants from 'constants/utilities';
+import { IToggleSideBar } from 'actions/utilities';
 
-const sideBar = (state: boolean = false, action: IUtilActions) => {
-  if (action.type === TOGGLE_SIDEBAR) {
-    let newState = Object.assign({}, state);
-    action.payload = !state;
-    newState = action.payload;
+const sideBar = (state: boolean = false, action: IToggleSideBar) => {
+  if (action.type === constants.TOGGLE_SIDEBAR) {
+    let newState = !state;
     return newState;
   }
   return state;

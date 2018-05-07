@@ -1,14 +1,13 @@
 import * as constants from 'constants/timeTracker';
-import { ITimeState, TimeActions } from 'actions/timeActions';
+import { ITimeState, TimeActions, ISetMonth } from 'actions/timeActions';
 
 const INITIAL_TIME_STATE: ITimeState = {
   userTime: [{ id: '0', date: '03-01-2018', time: 8 }]
 };
 
-export const timeTrackerReducer = (state = INITIAL_TIME_STATE, action: TimeActions): ITimeState => {
+export const timeTrackerReducer = (state: ITimeState = INITIAL_TIME_STATE, action: TimeActions): ITimeState => {
   switch (action.type) {
     case constants.TIME_SET: {
-      console.log('action', action);
       return {
         ...state,
         userTime: action.payload
@@ -27,13 +26,12 @@ export const timeTrackerReducer = (state = INITIAL_TIME_STATE, action: TimeActio
 
 export default timeTrackerReducer;
 
-const INITIAL_MONTH_STATE = new Date().getMonth() + 1;
+const INITIAL_MONTH_STATE: number = new Date().getMonth() + 1;
 
-export const monthReducer = (state = INITIAL_MONTH_STATE, action: TimeActions): number => {
+export const monthReducer = (state: number = INITIAL_MONTH_STATE, action: ISetMonth): number => {
   switch (action.type) {
     case constants.SET_MONTH: {
-      let newState = Object.assign({}, state);
-      newState = action.payload;
+      let newState = action.payload;
       return newState;
     }
     default:
@@ -41,13 +39,12 @@ export const monthReducer = (state = INITIAL_MONTH_STATE, action: TimeActions): 
   }
 };
 
-const INITIAL_YEAR_STATE = new Date().getFullYear();
+const INITIAL_YEAR_STATE: number = new Date().getFullYear();
 
-export const yearReducer = (state = INITIAL_YEAR_STATE, action: TimeActions): number => {
+export const yearReducer = (state: number = INITIAL_YEAR_STATE, action: TimeActions): number => {
   switch (action.type) {
     case constants.SET_YEAR: {
-      let newState = Object.assign({}, state);
-      newState = action.payload;
+      let newState = action.payload;
       return newState;
     }
     case constants.NEXT_YEAR: {
