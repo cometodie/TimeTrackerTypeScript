@@ -26,7 +26,6 @@ class Home extends React.Component<HomeProps, {}> {
   }
 
   componentWillMount() {
-    console.log('home props: ', this.props);
     if (this.props.authUser) {
       this.props.onSetData(dbApi.getTimeDate(this.props.authUser.uid));
     } else {

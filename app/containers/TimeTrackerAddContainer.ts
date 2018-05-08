@@ -22,7 +22,6 @@ interface DispatchFromProps {
   setSnackBar: (state: string) => void;
 }
 
-
 const mapDispatchToProps = (dispatch: Dispatch<SetTime | IUtilActions>): DispatchFromProps => {
   return {
     onSetData: (time: Table.Time[]) => dispatch(setTimeTrackerData(time)),
