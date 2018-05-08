@@ -1,5 +1,6 @@
 import { User } from 'firebase';
-import { UserState, SetUser, AUTH_USER_SET } from 'actions/sessionActions';
+import { UserState, SetUser } from 'actions/sessionActions';
+import { AUTH_USER_SET } from 'constants/session';
 
 const INITIAL_STATE: UserState = {
   authUser: null

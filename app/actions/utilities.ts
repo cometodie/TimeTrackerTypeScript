@@ -1,17 +1,17 @@
 import * as constants from 'constants/utilities';
 
 export interface SetSnackBar {
-  type: constants.SET_SNACKBAR;
+  type: typeof constants.SET_SNACKBAR;
   payload: string;
 }
 
 export interface ToggleLoading {
-  type: constants.TOGGLE_LOADING;
+  type: typeof constants.TOGGLE_LOADING;
   payload: boolean;
 }
 
 export interface ToggleSideBar {
-  type: constants.TOGGLE_SIDEBAR;
+  type: typeof constants.TOGGLE_SIDEBAR;
   payload: boolean;
 }
 

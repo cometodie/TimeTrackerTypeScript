@@ -1,14 +1,12 @@
 import { User } from 'firebase';
+import { AUTH_USER_SET } from 'constants/session';
 
 export interface UserState {
   authUser: User;
 }
 
-export const AUTH_USER_SET = 'user/SET';
-type AUTH_USER_SET = typeof AUTH_USER_SET;
-
 export interface SetUser {
-  type: AUTH_USER_SET;
+  type: typeof AUTH_USER_SET;
   payload: User;
 }
 

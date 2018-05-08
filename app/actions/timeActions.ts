@@ -5,30 +5,30 @@ import { User } from 'firebase';
 import Table from 'models/table';
 
 export interface SetTime {
-  type: constants.TIME_SET;
+  type: typeof constants.TIME_SET;
   payload: Table.Time[];
 }
 
 export interface SetYear {
-  type: constants.SET_YEAR;
+  type: typeof constants.SET_YEAR;
   payload: number;
 }
 
 export interface SetMonth {
-  type: constants.SET_MONTH;
+  type: typeof constants.SET_MONTH;
   payload: number;
 }
 
 export interface NextYear {
-  type: constants.NEXT_YEAR;
+  type: typeof constants.NEXT_YEAR;
 }
 
 export interface PrevYear {
-  type: constants.PREV_YEAR;
+  type: typeof constants.PREV_YEAR;
 }
 
 export interface TimeClear {
-  type: constants.TIME_CLEAR;
+  type: typeof constants.TIME_CLEAR;
 }
 
 export interface TimeState {
