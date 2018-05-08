@@ -1,13 +1,12 @@
 import { connect, Dispatch } from 'react-redux';
 import { compose } from 'redux';
 
-import { setTimeTrackerData, TimeActions } from 'actions/timeActions';
+import { setTimeTrackerData, SetTime } from 'actions/timeActions';
 import { setSnackBar, setLoading } from 'actions/utilities';
 import { User } from 'firebase';
 import { Store } from 'store/store';
 import { IUtilActions } from 'actions/utilities';
 import TimeTrackerAdd from 'components/timeTrackerAdd/timeTrackerAdd';
-import withAuthorization from 'components/sessions/withAuthorization';
 import Table from 'models/table';
 
 const mapStateToProps = (state: Store) => {
@@ -17,19 +16,21 @@ const mapStateToProps = (state: Store) => {
   };
 };
 
-const authCondition = (authUser: User) => !!authUser;
+interface DispatchFromProps {
+  onSetData: (time: Table.Time[]) => void;
+  setLoading: (state: boolean) => void;
+  setSnackBar: (state: string) => void;
+}
 
-const mapDispatchToProps = (dispatch: Dispatch<TimeActions | IUtilActions>) => {
+
+const mapDispatchToProps = (dispatch: Dispatch<SetTime | IUtilActions>): DispatchFromProps => {
   return {
     onSetData: (time: Table.Time[]) => dispatch(setTimeTrackerData(time)),
     setLoading: (state: boolean) => dispatch(setLoading(state)),
     setSnackBar: (state: string) => {
       dispatch(setSnackBar(state));
-    },
-    toggleLoading: (status: boolean) => {
-      dispatch(setLoading(status));
     }
   };
 };
 
-export default compose(withAuthorization(authCondition), connect(mapStateToProps, mapDispatchToProps))(TimeTrackerAdd);
+export default connect(mapStateToProps, mapDispatchToProps)(TimeTrackerAdd);

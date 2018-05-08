@@ -2,6 +2,7 @@ import * as React from 'react';
 import Paper from 'material-ui/Paper';
 import { connect, Dispatch } from 'react-redux';
 
+import * as routes from 'constants/routes';
 import { auth } from 'config/firebase';
 import { toggleSidebar, setSnackBar, IUtilActions } from 'actions/utilities';
 import { clearTimeStore, TimeClear } from 'actions/timeActions';
@@ -9,8 +10,9 @@ import { Store } from 'store/store';
 import { User } from 'firebase';
 import NavigationAuth from './NavigationAuth';
 import NavigationNonAuth from './NavigationNonAuth';
+import { RouteComponentProps, withRouter } from 'react-router';
 
-interface SideBarProps {
+interface SideBarProps extends RouteComponentProps<void> {
   authUser: User;
   isOpen: boolean;
   setSnackBar: (state: string) => void;
@@ -57,6 +59,7 @@ class SideBar extends React.Component<SideBarProps, SideBarState> {
     this.props.onLogout();
     this.props.setSnackBar('Уou have successfully logged out!');
     auth.signOut();
+    this.props.history.push(routes.SIGN_IN);
   }
 
   render() {
@@ -97,4 +100,4 @@ export default connect(
       onLogout: () => dispatch(clearTimeStore())
     };
   }
-)(SideBar);
+)(withRouter(SideBar));

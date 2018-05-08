@@ -4,9 +4,11 @@ import TypeField from 'components/typeField/TypeField';
 import * as routes from 'constants/routes';
 import { RouteComponentProps } from 'react-router';
 import { RaisedButton } from 'material-ui';
+import { User } from 'firebase';
 
 interface SignProps extends RouteComponentProps<void> {
   setSnackBar: (text: string) => void;
+  setUser: (user: User) => void;
 }
 
 interface SignInFormState {
@@ -41,6 +43,7 @@ class SignInForm extends React.Component<SignProps, SignInFormState> {
           .signInWithEmailAndPassword(this.state.email, this.state.password)
           .then(currentUser => {
             if (currentUser) {
+              this.props.setUser(currentUser);
               this.props.setSnackBar(`You have successfully logged in, ${this.state.email}`);
               this.props.history.push(routes.ADD);
             }

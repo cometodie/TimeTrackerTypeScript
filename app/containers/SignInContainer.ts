@@ -1,10 +1,20 @@
 import { connect, Dispatch } from 'react-redux';
 
-import { setSnackBar, IUtilActions } from 'actions/utilities';
+import { setSnackBar, SetSnackBar } from 'actions/utilities';
 import SignInPage from 'components/auth/SignIn';
+import { setUser, SetUser } from 'actions/sessionActions';
+import { User } from 'firebase';
 
-const mapDispatchToProps = (dispatch: Dispatch<IUtilActions>) => {
+interface MapDispatchState {
+  setUser: (user: User) => void;
+  setSnackBar: (text: string) => void;
+}
+
+const mapDispatchToProps = (dispatch: Dispatch<SetSnackBar | SetUser>): MapDispatchState => {
   return {
+    setUser: (user: User) => {
+      dispatch(setUser(user));
+    },
     setSnackBar: (state: string) => {
       dispatch(setSnackBar(state));
     }

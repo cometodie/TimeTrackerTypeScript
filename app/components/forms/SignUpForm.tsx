@@ -3,11 +3,13 @@ import { RouteComponentProps } from 'react-router';
 import TypeField from 'components/typeField/TypeField';
 import RaisedButton from 'material-ui/RaisedButton';
 
+import * as routes from 'constants/routes';
+import { User } from 'firebase';
 import { auth } from 'config/firebase';
 import { validateEmail, validatePassword } from '../../helpers/validateLogic';
-import * as routes from 'constants/routes';
 
 interface SignProps extends RouteComponentProps<void> {
+  setUser: (user: User) => void;
   setSnackBar: (text: string) => void;
 }
 
@@ -56,9 +58,10 @@ class SignUpForm extends React.Component<SignProps, SignUpFormState> {
         () => {
           auth
             .createUserWithEmailAndPassword(this.state.email, this.state.passwordTwo)
-            .then(data => {
-              this.props.history.push(routes.ADD);
+            .then(user => {
+              this.props.setUser(user);
               this.props.setSnackBar('Account has successfully created!');
+              this.props.history.push(routes.ADD);
             })
             .catch(error => {
               this.setState({ error: error });

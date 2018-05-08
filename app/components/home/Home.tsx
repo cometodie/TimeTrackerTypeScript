@@ -3,12 +3,12 @@ import TimeTrackerTable from 'components/Table/TimeTrackerTable/TimeTrackerTable
 import * as dbApi from 'dbApi/TimeTrackerApi';
 import * as routes from 'constants/routes';
 
-import { Link } from 'react-router-dom';
+import { Link, RouteComponentProps } from 'react-router-dom';
 import { RaisedButton } from 'material-ui';
 import Table from 'models/table';
 import { User } from 'firebase';
 
-interface HomeProps {
+interface HomeProps extends RouteComponentProps<void> {
   authUser: User;
   timeStore: Table.Time[];
   currentMonth: number;
@@ -16,6 +16,8 @@ interface HomeProps {
   onNextYear: () => void;
   onSetData: (time: Table.Time[]) => void;
   setUser: (user: User) => void;
+  onSetMonth: (month: number) => void;
+  setLoader: (status: boolean) => void;
 }
 
 class Home extends React.Component<HomeProps, {}> {
@@ -24,7 +26,12 @@ class Home extends React.Component<HomeProps, {}> {
   }
 
   componentWillMount() {
-    this.props.onSetData(dbApi.getTimeDate(this.props.authUser.uid));
+    console.log('home props: ', this.props);
+    if (this.props.authUser) {
+      this.props.onSetData(dbApi.getTimeDate(this.props.authUser.uid));
+    } else {
+      this.props.history.push(routes.SIGN_IN);
+    }
   }
 
   render() {

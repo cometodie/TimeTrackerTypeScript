@@ -14,6 +14,7 @@ import TypeField from 'components/typeField/TypeField';
 import Table from 'models/table';
 
 import './timeTracker.scss';
+import { EvalSourceMapDevToolPlugin } from 'webpack';
 
 interface TimeProps extends RouteComponentProps<void> {
   authUser: User;
@@ -59,9 +60,13 @@ class TimeTrackerAdd extends React.Component<TimeProps, TimeState> {
   }
 
   componentWillMount() {
-    this.props.setLoading(true);
-    this.props.onSetData(dbApi.getTimeDate(this.props.authUser.uid));
-    this.props.setLoading(false);
+    if (this.props.authUser) {
+      this.props.setLoading(true);
+      this.props.onSetData(dbApi.getTimeDate(this.props.authUser.uid));
+      this.props.setLoading(false);
+    } else {
+      this.props.history.push(routes.SIGN_IN);
+    }
   }
 
   addTime(event: React.FormEvent<{}>) {
