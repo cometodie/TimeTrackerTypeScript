@@ -1,12 +1,12 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
-import * as routes from 'constants/routes';
 
+import * as routes from 'constants/routes';
 import HomeIcon from 'utilities/icons/HomeIcon';
 import ExitIcon from 'utilities/icons/ExitIcon';
 
-import { Link } from 'react-router-dom';
 
 interface INavigation {
   email: string;

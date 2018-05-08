@@ -1,9 +1,9 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
-import * as routes from 'constants/routes';
 
-import { Link } from 'react-router-dom';
+import * as routes from 'constants/routes';
 import { SignInIcon } from 'utilities/icons/SIgnInIcon';
 import { SignUpIcon } from 'utilities/icons/SignUpIcon';
 

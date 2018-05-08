@@ -1,22 +1,17 @@
 import * as React from 'react';
-import IconButton from 'material-ui/IconButton';
-import Checkbox from 'material-ui/Checkbox';
-import ActionFavorite from 'material-ui/svg-icons/action/favorite';
-import ActionFavoriteBorder from 'material-ui/svg-icons/action/favorite-border';
-import NavigationClose from 'material-ui/svg-icons/navigation/close';
+import { withRouter, RouteComponentProps } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Card } from 'material-ui/Card';
+import { RaisedButton } from 'material-ui';
+
 import * as dbApi from 'dbApi/TimeTrackerApi';
 import * as routes from 'constants/routes';
+import { db } from 'config/firebase';
+import { User } from 'firebase';
 import DatePicker from 'material-ui/DatePicker';
 import TypeField from 'components/typeField/TypeField';
 
-import { withRouter, RouteComponentProps } from 'react-router-dom';
-import { db } from 'config/firebase';
-import { connect } from 'react-redux';
-import { List, ListItem } from 'material-ui/List';
-import { Card, CardHeader } from 'material-ui/Card';
-import { RaisedButton } from 'material-ui';
 import Table from 'models/table';
-import { User } from 'firebase';
 
 import './timeTracker.scss';
 

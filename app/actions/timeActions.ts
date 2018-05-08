@@ -1,5 +1,6 @@
-import * as constants from 'constants/timeTracker';
 import { Dispatch } from 'react-redux';
+
+import * as constants from 'constants/timeTracker';
 import { User } from 'firebase';
 import Table from 'models/table';
 

@@ -1,15 +1,14 @@
-import TimeTrackerAdd from 'components/timeTrackerAdd/timeTrackerAdd';
-import withAuthorization from 'components/sessions/withAuthorization';
-
 import { connect, Dispatch } from 'react-redux';
 import { compose } from 'redux';
+
 import { setTimeTrackerData, TimeActions } from 'actions/timeActions';
 import { setSnackBar, setLoading } from 'actions/utilities';
 import { User } from 'firebase';
 import { IStore } from 'store/store';
 import { IUtilActions } from 'actions/utilities';
+import TimeTrackerAdd from 'components/timeTrackerAdd/timeTrackerAdd';
+import withAuthorization from 'components/sessions/withAuthorization';
 import Table from 'models/table';
-// import Table from "models/Table";
 
 const mapStateToProps = (state: IStore) => {
   return {

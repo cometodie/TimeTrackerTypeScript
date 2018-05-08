@@ -1,19 +1,14 @@
 import * as React from 'react';
-import IconButton from 'material-ui/IconButton';
-import Checkbox from 'material-ui/Checkbox';
-import ActionFavorite from 'material-ui/svg-icons/action/favorite';
-import ActionFavoriteBorder from 'material-ui/svg-icons/action/favorite-border';
-import NavigationClose from 'material-ui/svg-icons/navigation/close';
-import * as date from 'constants/date';
-
 import { connect } from 'react-redux';
-import { List, ListItem } from 'material-ui/List';
-import { Card, CardHeader } from 'material-ui/Card';
+import { Card } from 'material-ui/Card';
+
+import * as date from 'constants/date';
 import { ArrowLeftIcon } from 'utilities/icons/ArrowLeftIcon';
 import { ArrowRightIcon } from 'utilities/icons/ArrowRightIcon';
 import { getMonthArray } from '../../../helpers/monthLogic';
 import TimeTrackerRow from './timeTrackerRow/TimeTrackerRow';
 import Table from 'models/table';
+
 import './timeTrackerTable.scss';
 
 class TimeTrackerTable extends React.Component<Table.TableProps, Table.ITableState> {

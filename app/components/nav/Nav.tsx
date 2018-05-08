@@ -1,10 +1,10 @@
 import * as React from 'react';
-import AppBar from 'material-ui/AppBar';
-import IconButton from 'material-ui/IconButton';
-import NavigationClose from 'material-ui/svg-icons/navigation/close';
-
 import { connect, Dispatch } from 'react-redux';
 import { Link, BrowserRouter } from 'react-router-dom';
+import IconButton from 'material-ui/IconButton';
+import AppBar from 'material-ui/AppBar';
+import NavigationClose from 'material-ui/svg-icons/navigation/close';
+
 import { IStore } from 'store/store';
 import { toggleSidebar, IUtilActions } from 'actions/utilities';
 import './nav.scss';

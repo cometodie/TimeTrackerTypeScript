@@ -1,7 +1,9 @@
 import * as React from 'react';
-import * as routes from 'constants/routes';
 import { Link, RouteComponentProps } from 'react-router-dom';
+
+import * as routes from 'constants/routes';
 import { User } from 'firebase';
+
 import './notFoundPage.scss';
 
 interface INFProps extends RouteComponentProps<void> {

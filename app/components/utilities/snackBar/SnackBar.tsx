@@ -1,7 +1,8 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
 import Snackbar from 'material-ui/Snackbar';
 import RaisedButton from 'material-ui/RaisedButton';
-import { connect } from 'react-redux';
+
 import { setSnackBar, IUtilActions } from 'actions/utilities';
 import { IStore } from 'store/store';
 import { User } from 'firebase';

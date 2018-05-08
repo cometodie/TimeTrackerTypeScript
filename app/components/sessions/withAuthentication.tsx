@@ -1,8 +1,8 @@
 import * as React from 'react';
-
 import { connect, Dispatch } from 'react-redux';
+
 import { auth } from 'config/firebase';
-import { set } from 'actions/sessionActions';
+import { setUser } from 'actions/sessionActions';
 import { User } from 'firebase';
 
 interface MapDispatchToProps {
@@ -26,7 +26,7 @@ const withAuthentication = (Component: React.StatelessComponent) => {
   }
 
   const mapDispatchToProps = (dispatch: Dispatch): MapDispatchToProps => ({
-    onSetAuthUser: authUser => dispatch(set(authUser))
+    onSetAuthUser: authUser => dispatch(setUser(authUser))
   });
 
   return connect(null, mapDispatchToProps)(WithAuthentication);

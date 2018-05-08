@@ -1,7 +1,8 @@
-import NotFoundPage from 'components/utilities/notFoundPage/NotFoundPage';
 import { connect } from 'react-redux';
+
 import { IStore } from 'store/store';
 import { User } from 'firebase';
+import NotFoundPage from 'components/utilities/notFoundPage/NotFoundPage';
 
 const mapStateToProps = (state: IStore) => {
   return {
