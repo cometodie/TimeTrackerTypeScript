@@ -1,4 +1,5 @@
 var path = require('path');
+var TSLintPlugin = require('tslint-webpack-plugin');
 
 module.exports = {
   entry: './index.tsx', // входная точка - исходный файл
@@ -41,5 +42,10 @@ module.exports = {
     },
     extensions: ['.ts', '.tsx', '.js', '.json', '.scss']
   },
-  mode: 'development'
+  mode: 'development',
+  plugins: [
+    new TSLintPlugin({
+      files: ['./app/**/*.ts','./app/**/*.tsx']
+    })
+  ]
 };
