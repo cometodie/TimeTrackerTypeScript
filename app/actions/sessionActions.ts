@@ -14,7 +14,7 @@ export interface SetAction {
 
 export type UserAction = SetAction;
 
-export const set = (payload: User): SetAction => ({
+export const setUser = (payload: User): SetAction => ({
   type: AUTH_USER_SET,
   payload
 });
