@@ -1,12 +1,14 @@
+@import '~sharedStyles/variables';
+
 html,
 body {
   height: 100%;
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
-h1{
-    letter-spacing: 2px;
+h1 {
+  letter-spacing: 2px;
 }
 
 a {
@@ -19,5 +21,5 @@ a {
 }
 
 .new {
-  color: red;
+  color: $red;
 }

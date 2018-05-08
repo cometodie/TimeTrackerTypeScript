@@ -36,9 +36,10 @@ module.exports = {
       models: path.resolve(__dirname, './app/models/'),
       utilities: path.resolve(__dirname, './app/components/utilities/'),
       table: path.resolve(__dirname, './app/components/table'),
+      sharedStyles: path.resolve(__dirname, './app/sharedStyles/'),
       store: path.resolve(__dirname, './app/store')
     },
-    extensions: ['.ts', '.tsx', '.js', '.json']
+    extensions: ['.ts', '.tsx', '.js', '.json', '.scss']
   },
   mode: 'development'
 };
