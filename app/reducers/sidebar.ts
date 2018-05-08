@@ -1,7 +1,7 @@
 import * as constants from 'constants/utilities';
-import { IToggleSideBar } from 'actions/utilities';
+import { ToggleSideBar } from 'actions/utilities';
 
-const sideBar = (state: boolean = false, action: IToggleSideBar) => {
+const sideBar = (state: boolean = false, action: ToggleSideBar) => {
   if (action.type === constants.TOGGLE_SIDEBAR) {
     let newState = !state;
     return newState;

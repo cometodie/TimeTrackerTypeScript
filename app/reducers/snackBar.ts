@@ -1,7 +1,7 @@
 import { SET_SNACKBAR } from 'constants/utilities';
-import { ISetSnackBar } from 'actions/utilities';
+import { SetSnackBar } from 'actions/utilities';
 
-const snackBar = (state: string = '', action: ISetSnackBar): string => {
+const snackBar = (state: string = '', action: SetSnackBar): string => {
   if (action.type === SET_SNACKBAR) {
     let newState = action.payload;
     return newState;
