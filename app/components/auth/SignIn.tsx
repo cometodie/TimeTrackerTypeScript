@@ -9,11 +9,11 @@ import SignInForm from 'components/forms/SignInForm';
 
 import './auth.scss';
 
-interface ISignProps extends RouteComponentProps<void> {
+interface SignProps extends RouteComponentProps<void> {
   setSnackBar: (text: string) => void;
 }
 
-const SignInPage: React.SFC<ISignProps> = (props: ISignProps) => (
+const SignInPage: React.SFC<SignProps> = (props: SignProps) => (
   <div className="container">
     <div className="page-wrapper">
       <h1>SignIn</h1>

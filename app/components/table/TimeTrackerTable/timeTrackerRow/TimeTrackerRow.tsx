@@ -5,8 +5,8 @@ import Table from 'models/table';
 
 import './timeTrackerRow.scss';
 
-class TimeTrackerRow extends React.Component<Table.IWeekProps, Table.IWeekState> {
-  constructor(props: Table.IWeekProps) {
+class TimeTrackerRow extends React.Component<Table.WeekProps, Table.WeekState> {
+  constructor(props: Table.WeekProps) {
     super(props);
     this.state = {
       days: []
@@ -21,7 +21,7 @@ class TimeTrackerRow extends React.Component<Table.IWeekProps, Table.IWeekState>
     });
   }
 
-  componentWillReceiveProps(nProps: Table.IWeekProps) {
+  componentWillReceiveProps(nProps: Table.WeekProps) {
     this.setState({
       days: nProps.days,
       currentMonth: nProps.currentMonth,

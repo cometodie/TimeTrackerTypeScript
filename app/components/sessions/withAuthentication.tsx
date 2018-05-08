@@ -12,7 +12,6 @@ interface MapDispatchToProps {
 const withAuthentication = (Component: React.StatelessComponent) => {
   class WithAuthentication extends React.Component<MapDispatchToProps> {
     componentDidMount() {
-      console.log('props: ', this.props);
       const { onSetAuthUser } = this.props;
       auth.onAuthStateChanged(authUser => {
         authUser ? onSetAuthUser(authUser) : onSetAuthUser(null);
@@ -20,7 +19,6 @@ const withAuthentication = (Component: React.StatelessComponent) => {
     }
 
     render() {
-      console.log();
       return <Component />;
     }
   }

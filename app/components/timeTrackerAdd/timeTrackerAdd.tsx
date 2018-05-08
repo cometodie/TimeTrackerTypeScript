@@ -15,24 +15,28 @@ import Table from 'models/table';
 
 import './timeTracker.scss';
 
-interface ITimeProps extends RouteComponentProps<void> {
+interface TimeProps extends RouteComponentProps<void> {
   authUser: User;
-  timeStore: Table.ITime[];
-  onSetData: (time: Table.ITime[]) => void;
+  timeStore: Table.Time[];
+  onSetData: (time: Table.Time[]) => void;
   setLoading: (status: boolean) => void;
   setSnackBar: (text: string) => void;
 }
 
-interface ITimeState {
-  timeStore: Table.ITime[];
+interface TimeState {
+  timeStore: Table.Time[];
   date: string;
   time: number;
 }
 
 let timeField: TypeField;
 
-class TimeTrackerAdd extends React.Component<ITimeProps, ITimeState> {
-  constructor(props: ITimeProps) {
+class TimeTrackerAdd extends React.Component<TimeProps, TimeState> {
+  static prepareDate(date: Date) {
+    return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+  }
+
+  constructor(props: TimeProps) {
     super(props);
     this.back = this.back.bind(this);
     this.addTime = this.addTime.bind(this);
@@ -54,10 +58,6 @@ class TimeTrackerAdd extends React.Component<ITimeProps, ITimeState> {
     this.props.history.push(routes.HOME);
   }
 
-  static prepareDate(date: Date) {
-    return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
-  }
-
   componentWillMount() {
     this.props.setLoading(true);
     this.props.onSetData(dbApi.getTimeDate(this.props.authUser.uid));
@@ -74,7 +74,7 @@ class TimeTrackerAdd extends React.Component<ITimeProps, ITimeState> {
           time: time
         },
         () => {
-          var existEl = this.props.timeStore.find(el => el.date == this.state.date);
+          var existEl = this.props.timeStore.find(el => el.date === this.state.date);
           existEl
             ? dbApi.updateTime(this.props.authUser.uid, existEl.id, this.state.time)
             : dbApi.doCreateTime(this.props.authUser.uid, this.state.date, this.state.time);

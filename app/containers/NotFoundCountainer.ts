@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 
-import { IStore } from 'store/store';
+import { Store } from 'store/store';
 import { User } from 'firebase';
 import NotFoundPage from 'components/utilities/notFoundPage/NotFoundPage';
 
-const mapStateToProps = (state: IStore) => {
+const mapStateToProps = (state: Store) => {
   return {
     authUser: state.sessionState.authUser
   };

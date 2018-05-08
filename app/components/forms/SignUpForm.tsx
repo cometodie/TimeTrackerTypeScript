@@ -7,11 +7,11 @@ import { auth } from 'config/firebase';
 import { validateEmail, validatePassword } from '../../helpers/validateLogic';
 import * as routes from 'constants/routes';
 
-interface ISignProps extends RouteComponentProps<void> {
+interface SignProps extends RouteComponentProps<void> {
   setSnackBar: (text: string) => void;
 }
 
-interface ISignUpFormState {
+interface SignUpFormState {
   username: string;
   email: string;
   passwordOne: string;
@@ -24,8 +24,8 @@ let emailField: TypeField;
 let passwdField: TypeField;
 let passwdConfField: TypeField;
 
-class SignUpForm extends React.Component<ISignProps, ISignUpFormState> {
-  constructor(props: ISignProps) {
+class SignUpForm extends React.Component<SignProps, SignUpFormState> {
+  constructor(props: SignProps) {
     super(props);
     this.onSubmit = this.onSubmit.bind(this);
     this.state = {

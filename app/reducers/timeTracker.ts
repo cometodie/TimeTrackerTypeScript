@@ -1,11 +1,11 @@
 import * as constants from 'constants/timeTracker';
-import { ITimeState, TimeActions, ISetMonth } from 'actions/timeActions';
+import { TimeState, TimeActions, SetMonth } from 'actions/timeActions';
 
-const INITIAL_TIME_STATE: ITimeState = {
+const INITIAL_TIME_STATE: TimeState = {
   userTime: [{ id: '0', date: '03-01-2018', time: 8 }]
 };
 
-export const timeTrackerReducer = (state: ITimeState = INITIAL_TIME_STATE, action: TimeActions): ITimeState => {
+export const timeTrackerReducer = (state: TimeState = INITIAL_TIME_STATE, action: TimeActions): TimeState => {
   switch (action.type) {
     case constants.TIME_SET: {
       return {
@@ -28,7 +28,7 @@ export default timeTrackerReducer;
 
 const INITIAL_MONTH_STATE: number = new Date().getMonth() + 1;
 
-export const monthReducer = (state: number = INITIAL_MONTH_STATE, action: ISetMonth): number => {
+export const monthReducer = (state: number = INITIAL_MONTH_STATE, action: SetMonth): number => {
   switch (action.type) {
     case constants.SET_MONTH: {
       let newState = action.payload;

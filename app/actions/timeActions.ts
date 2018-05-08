@@ -4,66 +4,66 @@ import * as constants from 'constants/timeTracker';
 import { User } from 'firebase';
 import Table from 'models/table';
 
-export interface ISetTime {
+export interface SetTime {
   type: constants.TIME_SET;
-  payload: Table.ITime[];
+  payload: Table.Time[];
 }
 
-export interface ISetYear {
+export interface SetYear {
   type: constants.SET_YEAR;
   payload: number;
 }
 
-export interface ISetMonth {
+export interface SetMonth {
   type: constants.SET_MONTH;
   payload: number;
 }
 
-export interface INextYear {
+export interface NextYear {
   type: constants.NEXT_YEAR;
 }
 
-export interface IPrevYear {
+export interface PrevYear {
   type: constants.PREV_YEAR;
 }
 
-export interface ITimeClear {
+export interface TimeClear {
   type: constants.TIME_CLEAR;
 }
 
-export interface ITimeState {
-  userTime: Table.ITime[];
+export interface TimeState {
+  userTime: Table.Time[];
 }
 
-export type TimeActions = ISetTime | ISetMonth | INextYear | IPrevYear | ITimeClear | ISetYear;
+export type TimeActions = SetTime | SetMonth | NextYear | PrevYear | TimeClear | SetYear;
 
-export const setMonth = (payload: number): ISetMonth => {
+export const setMonth = (payload: number): SetMonth => {
   return {
     type: constants.SET_MONTH,
     payload: payload
   };
 };
 
-export const nextYear = (): INextYear => {
+export const nextYear = (): NextYear => {
   return {
     type: constants.NEXT_YEAR
   };
 };
 
-export const prevYear = (): IPrevYear => {
+export const prevYear = (): PrevYear => {
   return {
     type: constants.PREV_YEAR
   };
 };
 
-export const setTimeTrackerData = (payload: Table.ITime[]): ISetTime => {
+export const setTimeTrackerData = (payload: Table.Time[]): SetTime => {
   return {
     type: constants.TIME_SET,
     payload: payload
   };
 };
 
-export const setTimeMonth = (payload: number, dispatch: Dispatch): ISetMonth => {
+export const setTimeMonth = (payload: number, dispatch: Dispatch): SetMonth => {
   if (payload > 12) {
     dispatch(nextYear());
     payload = 1;
@@ -74,14 +74,14 @@ export const setTimeMonth = (payload: number, dispatch: Dispatch): ISetMonth => 
   return setMonth(payload);
 };
 
-export const setTimeYear = (payload: number): ISetYear => {
+export const setTimeYear = (payload: number): SetYear => {
   return {
     type: constants.SET_YEAR,
     payload: payload
   };
 };
 
-export const clearTimeStore = (): ITimeClear => {
+export const clearTimeStore = (): TimeClear => {
   return {
     type: constants.TIME_CLEAR
   };

@@ -6,52 +6,52 @@ namespace Table {
     countOfDays?: number;
     currentMonth: number;
     currentYear?: number;
-    timeStore?: ITime[];
-    month?: IDay[];
+    timeStore?: Time[];
+    month?: Day[];
     onSetMonth?(time: number): void;
-    onSetData?(array: ITime[]): void;
+    onSetData?(array: Time[]): void;
   }
 
-  export interface ITableState {
-    month: IDay[];
+  export interface TableState {
+    month: Day[];
     nameOfMonth: string;
     countOfDays?: number;
     rows?: number;
   }
 
-  export interface IWeekProps {
+  export interface WeekProps {
     currentMonth: number;
     currentYear: number;
-    days: IDay[];
-    timeStore: ITime[];
+    days: Day[];
+    timeStore: Time[];
   }
 
-  export interface IWeekState {
+  export interface WeekState {
     currentMonth?: number;
     currentYear?: number;
-    days: IDay[];
+    days: Day[];
   }
 
-  export interface IDayProps {
+  export interface DayProps {
     active: boolean;
     day: number;
     time: number;
   }
 
-  export interface IDayState {
+  export interface DayState {
     time: number;
     isBig: boolean;
     isNormal: boolean;
     isDefault: boolean;
   }
 
-  export interface ITime {
+  export interface Time {
     id: string;
     date: string;
     time: number;
   }
 
-  export interface IDay {
+  export interface Day {
     day: number;
     time: number;
     activeMount: boolean;

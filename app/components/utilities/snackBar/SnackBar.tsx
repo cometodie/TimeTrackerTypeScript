@@ -4,21 +4,21 @@ import Snackbar from 'material-ui/Snackbar';
 import RaisedButton from 'material-ui/RaisedButton';
 
 import { setSnackBar, IUtilActions } from 'actions/utilities';
-import { IStore } from 'store/store';
+import { Store } from 'store/store';
 import { User } from 'firebase';
 
-interface ISnackBarProps {
+interface SnackBarProps {
   authUser: User;
   textSnack: string;
   setSnackBar: (text: string) => void;
 }
 
-interface ISnackBarState {
+interface SnackBarState {
   open: boolean;
 }
 
-class SnackBar extends React.Component<ISnackBarProps, ISnackBarState> {
-  constructor(props: ISnackBarProps) {
+class SnackBar extends React.Component<SnackBarProps, SnackBarState> {
+  constructor(props: SnackBarProps) {
     super(props);
     this.state = {
       open: false
@@ -26,7 +26,7 @@ class SnackBar extends React.Component<ISnackBarProps, ISnackBarState> {
     this.handleRequestClose = this.handleRequestClose.bind(this);
   }
 
-  componentWillReceiveProps(props: ISnackBarProps) {
+  componentWillReceiveProps(props: SnackBarProps) {
     this.setState({
       open: props.textSnack.length > 0
     });
@@ -54,7 +54,7 @@ class SnackBar extends React.Component<ISnackBarProps, ISnackBarState> {
 }
 
 export default connect(
-  (state: IStore) => {
+  (state: Store) => {
     return {
       textSnack: state.snackBar,
       authUser: state.sessionState.authUser

@@ -5,11 +5,11 @@ import SignUpForm from 'components/forms/SignUpForm';
 
 import './auth.scss';
 
-interface ISignProps extends RouteComponentProps<void> {
+interface SignProps extends RouteComponentProps<void> {
   setSnackBar: (text: string) => void;
 }
 
-const SignUpPage: React.SFC<ISignProps> = (props: ISignProps) => (
+const SignUpPage: React.SFC<SignProps> = (props: SignProps) => (
   <div className="container">
     <div className="page-wrapper">
       <h1>SignUp</h1>

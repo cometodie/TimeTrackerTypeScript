@@ -6,7 +6,7 @@ import { compose } from 'redux';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { auth } from 'config/firebase';
 import { User } from 'firebase';
-import { IStore } from 'store/store';
+import { Store } from 'store/store';
 
 interface StateFromProps {
   authUser: User;
@@ -29,7 +29,7 @@ const withAuthorization = (condition: Function) => (Component: typeof React.Comp
     }
   }
 
-  const mapStateToProps = (state: IStore) => ({
+  const mapStateToProps = (state: Store) => ({
     authUser: state.sessionState.authUser
   });
 

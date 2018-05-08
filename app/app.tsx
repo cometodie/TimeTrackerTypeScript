@@ -22,10 +22,10 @@ const App = () => (
       <Nav />
       <SideBar />
       <Switch>
-        <Route exact path={routes.HOME} component={HomeContainer} />
-        <Route exact path={routes.SIGN_IN} component={SignInContainer} />
-        <Route exact path={routes.SIGN_UP} component={SignUpContainer} />
-        <Route exact path={routes.ADD} component={TimeTrackerAddContainer} />
+        <Route exact={true} path={routes.HOME} component={HomeContainer} />
+        <Route exact={true} path={routes.SIGN_IN} component={SignInContainer} />
+        <Route exact={true} path={routes.SIGN_UP} component={SignUpContainer} />
+        <Route exact={true} path={routes.ADD} component={TimeTrackerAddContainer} />
         <Route path="*" component={NotFoundCountainer} />
       </Switch>
       <SnackBar />

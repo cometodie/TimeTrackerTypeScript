@@ -6,11 +6,11 @@ import { User } from 'firebase';
 
 import './notFoundPage.scss';
 
-interface INFProps extends RouteComponentProps<void> {
+interface NFProps extends RouteComponentProps<void> {
   authUser: User;
 }
 
-const NotFoundPage: React.SFC<INFProps> = (props: INFProps) => {
+const NotFoundPage: React.SFC<NFProps> = (props: NFProps) => {
   return (
     <div className="notFoundBlock">
       <h1>Sorry, page not found</h1>

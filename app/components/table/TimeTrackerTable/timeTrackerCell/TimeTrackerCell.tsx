@@ -4,8 +4,8 @@ import Table from 'models/table';
 
 import './timeTrackerCell.scss';
 
-class TimeTrackerCell extends React.Component<Table.IDayProps, Table.IDayState> {
-  constructor(props: Table.IDayProps) {
+class TimeTrackerCell extends React.Component<Table.DayProps, Table.DayState> {
+  constructor(props: Table.DayProps) {
     super(props);
     this.udpateCell = this.udpateCell.bind(this);
     this.state = {
@@ -30,7 +30,7 @@ class TimeTrackerCell extends React.Component<Table.IDayProps, Table.IDayState> 
     );
   }
 
-  componentWillReceiveProps(props: Table.IDayProps) {
+  componentWillReceiveProps(props: Table.DayProps) {
     this.setState(
       {
         time: null,
@@ -48,7 +48,7 @@ class TimeTrackerCell extends React.Component<Table.IDayProps, Table.IDayState> 
     if (this.props.time != null) {
       if (this.props.time > 8) {
         this.setState({ isBig: true, time: this.props.time });
-      } else if (this.props.time == 0) {
+      } else if (this.props.time === 0) {
         this.setState({ isDefault: true, time: this.props.time });
       } else if (this.props.time <= 4) {
         this.setState({ isNormal: true, time: this.props.time });

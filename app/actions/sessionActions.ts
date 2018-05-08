@@ -1,6 +1,6 @@
 import { User } from 'firebase';
 
-export interface IUserState {
+export interface UserState {
   authUser: User;
 }
 

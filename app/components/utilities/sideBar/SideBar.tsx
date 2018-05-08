@@ -4,29 +4,27 @@ import { connect, Dispatch } from 'react-redux';
 
 import { auth } from 'config/firebase';
 import { toggleSidebar, setSnackBar, IUtilActions } from 'actions/utilities';
-import { clearTimeStore, ITimeClear } from 'actions/timeActions';
-import { IStore } from 'store/store';
+import { clearTimeStore, TimeClear } from 'actions/timeActions';
+import { Store } from 'store/store';
 import { User } from 'firebase';
 import NavigationAuth from './NavigationAuth';
 import NavigationNonAuth from './NavigationNonAuth';
 
-interface ISideBarProps {
+interface SideBarProps {
   authUser: User;
   isOpen: boolean;
   setSnackBar: (state: string) => void;
   toggleSidebar: (state: boolean) => void;
-  onLogout: () => ITimeClear;
+  onLogout: () => TimeClear;
 }
 
-/* Many css properties */
-interface ISideBarState {
+interface SideBarState {
   stylePaper: any;
   styleWrapper: any;
 }
 
-class SideBar extends React.Component<ISideBarProps, ISideBarState> {
-  constructor(props: ISideBarProps) {
-    console.log('sidebar', props);
+class SideBar extends React.Component<SideBarProps, SideBarState> {
+  constructor(props: SideBarProps) {
     super(props);
     this.openSideBar = this.openSideBar.bind(this);
     this.logout = this.logout.bind(this);
@@ -82,7 +80,7 @@ class SideBar extends React.Component<ISideBarProps, ISideBarState> {
 }
 
 export default connect(
-  (state: IStore) => {
+  (state: Store) => {
     return {
       isOpen: state.sideBar,
       authUser: state.sessionState.authUser

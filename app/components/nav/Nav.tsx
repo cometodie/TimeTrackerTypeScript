@@ -5,17 +5,17 @@ import IconButton from 'material-ui/IconButton';
 import AppBar from 'material-ui/AppBar';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
 
-import { IStore } from 'store/store';
+import { Store } from 'store/store';
 import { toggleSidebar, IUtilActions } from 'actions/utilities';
 import './nav.scss';
 
-interface INavProps {
+interface NavProps {
   isOpen?: boolean;
   toggleSidebar?: (value: boolean) => void;
 }
 
-class Nav extends React.Component<INavProps, {}> {
-  constructor(props: INavProps) {
+class Nav extends React.Component<NavProps, {}> {
+  constructor(props: NavProps) {
     super(props);
     this.openSideBar = this.openSideBar.bind(this);
   }
@@ -40,13 +40,13 @@ class Nav extends React.Component<INavProps, {}> {
   }
 }
 
-const mapStateToProps = (state: IStore): INavProps => {
+const mapStateToProps = (state: Store): NavProps => {
   return {
     isOpen: state.sideBar
   };
 };
 
-export default connect(mapStateToProps, (dispatch: Dispatch<IUtilActions>): INavProps => {
+export default connect(mapStateToProps, (dispatch: Dispatch<IUtilActions>): NavProps => {
   return {
     toggleSidebar: (state: boolean) => {
       dispatch(toggleSidebar(state));

@@ -2,7 +2,7 @@ import { compose } from 'redux';
 import { connect, Dispatch } from 'react-redux';
 
 import { User } from 'firebase';
-import { IStore } from 'store/store';
+import { Store } from 'store/store';
 import { setUser, UserAction } from 'actions/sessionActions';
 import * as TimeAction from 'actions/timeActions';
 import Home from 'components/home/Home';
@@ -11,19 +11,19 @@ import withAuthorization from 'components/sessions/withAuthorization';
 
 interface StateFromProps {
   authUser: User;
-  timeStore: Table.ITime[];
+  timeStore: Table.Time[];
   currentMonth: number;
   currentYear: number;
 }
 
 interface DispatchFromProps {
   onNextYear: () => void;
-  onSetData: (time: Table.ITime[]) => void;
+  onSetData: (time: Table.Time[]) => void;
   setUser: (user: User) => void;
   onSetMonth: (month: number, dispatch: Dispatch) => void;
 }
 
-const mapStateToProps = (state: IStore): StateFromProps => ({
+const mapStateToProps = (state: Store): StateFromProps => ({
   authUser: state.sessionState.authUser,
   timeStore: state.timeTrackerState.userTime,
   currentMonth: state.currentMonth,
@@ -34,7 +34,7 @@ const authCondition = (authUser: User): boolean => !!authUser;
 
 export const mapDispatchToProps = (dispatch: Dispatch<TimeAction.TimeActions | UserAction>): DispatchFromProps => ({
   onNextYear: () => dispatch(TimeAction.nextYear()),
-  onSetData: (time: Table.ITime[]) => dispatch(TimeAction.setTimeTrackerData(time)),
+  onSetData: (time: Table.Time[]) => dispatch(TimeAction.setTimeTrackerData(time)),
   setUser: (user: User) => dispatch(setUser(user)),
   onSetMonth: (month: number) => dispatch(TimeAction.setTimeMonth(month, dispatch))
   // setLoader: time => dispatch(setLoading(time)),

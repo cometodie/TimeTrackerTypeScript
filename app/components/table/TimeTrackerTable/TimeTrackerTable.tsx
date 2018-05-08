@@ -11,7 +11,7 @@ import Table from 'models/table';
 
 import './timeTrackerTable.scss';
 
-class TimeTrackerTable extends React.Component<Table.TableProps, Table.ITableState> {
+class TimeTrackerTable extends React.Component<Table.TableProps, Table.TableState> {
   constructor(props: Table.TableProps) {
     super(props);
     this.nextMonth = this.nextMonth.bind(this);
@@ -23,7 +23,7 @@ class TimeTrackerTable extends React.Component<Table.TableProps, Table.ITableSta
   }
 
   componentWillReceiveProps(props: Table.TableProps) {
-    const month: Table.IDay[] = getMonthArray(props.currentYear, props.currentMonth, props.timeStore);
+    const month: Table.Day[] = getMonthArray(props.currentYear, props.currentMonth, props.timeStore);
     this.setState(prevState => {
       return {
         month: month,

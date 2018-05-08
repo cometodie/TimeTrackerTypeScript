@@ -1,7 +1,7 @@
 import * as React from 'react';
 import TextField from 'material-ui/TextField';
 
-interface ITypeFieldProps {
+interface TypeFieldProps {
   value: string;
   type: string;
   name?: string;
@@ -11,12 +11,12 @@ interface ITypeFieldProps {
   validate?: (value: string) => boolean;
 }
 
-interface ITypeFieldState extends ITypeFieldProps {
+interface TypeFieldState extends TypeFieldProps {
   valid: boolean;
 }
 
-class TypeField extends React.Component<ITypeFieldProps, ITypeFieldState> {
-  constructor(props: ITypeFieldProps) {
+class TypeField extends React.Component<TypeFieldProps, TypeFieldState> {
+  constructor(props: TypeFieldProps) {
     super(props);
     this.state = {
       value: props.value,

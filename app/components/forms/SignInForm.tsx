@@ -5,11 +5,11 @@ import * as routes from 'constants/routes';
 import { RouteComponentProps } from 'react-router';
 import { RaisedButton } from 'material-ui';
 
-interface ISignProps extends RouteComponentProps<void> {
+interface SignProps extends RouteComponentProps<void> {
   setSnackBar: (text: string) => void;
 }
 
-interface ISignInFormState {
+interface SignInFormState {
   email: string;
   password: string;
   error: Error;
@@ -18,8 +18,8 @@ interface ISignInFormState {
 let emailField: TypeField;
 let passwdField: TypeField;
 
-class SignInForm extends React.Component<ISignProps, ISignInFormState> {
-  constructor(props: ISignProps) {
+class SignInForm extends React.Component<SignProps, SignInFormState> {
+  constructor(props: SignProps) {
     super(props);
     this.onSubmit = this.onSubmit.bind(this);
     this.state = {

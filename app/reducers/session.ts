@@ -1,11 +1,11 @@
 import { User } from 'firebase';
-import { IUserState, UserAction, AUTH_USER_SET } from 'actions/sessionActions';
+import { UserState, UserAction, AUTH_USER_SET } from 'actions/sessionActions';
 
-const INITIAL_STATE: IUserState = {
+const INITIAL_STATE: UserState = {
   authUser: null
 };
 
-const sessionReducer = (state: IUserState = INITIAL_STATE, action: UserAction): IUserState => {
+const sessionReducer = (state: UserState = INITIAL_STATE, action: UserAction): UserState => {
   switch (action.type) {
     case AUTH_USER_SET: {
       return {

@@ -10,11 +10,11 @@ import { User } from 'firebase';
 
 interface HomeProps {
   authUser: User;
-  timeStore: Table.ITime[];
+  timeStore: Table.Time[];
   currentMonth: number;
   currentYear: number;
   onNextYear: () => void;
-  onSetData: (time: Table.ITime[]) => void;
+  onSetData: (time: Table.Time[]) => void;
   setUser: (user: User) => void;
 }
 

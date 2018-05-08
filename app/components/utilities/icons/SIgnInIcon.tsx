@@ -2,11 +2,11 @@ import * as React from 'react';
 
 import SvgIcon from 'material-ui/SvgIcon';
 
-interface IIcon {
+interface Icon {
   onClick?: () => void;
 }
 
-export const SignInIcon: React.SFC<IIcon> = (props: IIcon) => (
+export const SignInIcon: React.SFC<Icon> = (props: Icon) => (
   <SvgIcon {...props}>
     <path
       d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3

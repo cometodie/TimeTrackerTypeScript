@@ -1,30 +1,11 @@
 import Table from 'models/table';
 
-export const getMonthArray = (year: number, month: number, store: Table.ITime[]) => {
-  const countDaysCurrentMonth = new Date(year, month, 0).getDate();
-  const daysMonth: Table.IDay[] = [];
-  for (let i = 1; i <= countDaysCurrentMonth; i++) {
-    let logDay = store.find(el => {
-      let elDate = new Date(el.date);
-      return elDate.getDate() === i && elDate.getMonth() + 1 === month && elDate.getFullYear() === year;
-    });
-    daysMonth.push({
-      day: i,
-      time: logDay ? logDay.time : null,
-      activeMount: true
-    });
-    logDay = null;
-  }
-
-  return addNextDays(year, month, addPrevDays(year, month, daysMonth));
-};
-
-const addPrevDays = (year: number, month: number, array: Table.IDay[]) => {
+const addPrevDays = (year: number, month: number, array: Table.Day[]) => {
   const dayOfWeekPrevMonth = new Date(year, month - 2).getDay();
   const dayOfWeekCurrrentMonth = new Date(year, month - 1).getDay();
   const countDaysPrevMonth = new Date(year, month - 1, 0).getDate();
 
-  if (dayOfWeekCurrrentMonth != 1) {
+  if (dayOfWeekCurrrentMonth !== 1) {
     if (!dayOfWeekCurrrentMonth) {
       for (let i = 7; i > 1; i--) {
         array.unshift({
@@ -46,9 +27,9 @@ const addPrevDays = (year: number, month: number, array: Table.IDay[]) => {
   return array;
 };
 
-const addNextDays = (year: number, month: number, array: Table.IDay[]) => {
+const addNextDays = (year: number, month: number, array: Table.Day[]) => {
   const dayOfWeekNextMonth = new Date(year, month).getDay();
-  if (dayOfWeekNextMonth != 1) {
+  if (dayOfWeekNextMonth !== 1) {
     if (!dayOfWeekNextMonth) {
       array.push({
         day: 1,
@@ -66,4 +47,23 @@ const addNextDays = (year: number, month: number, array: Table.IDay[]) => {
     }
   }
   return array;
+};
+
+export const getMonthArray = (year: number, month: number, store: Table.Time[]) => {
+  const countDaysCurrentMonth = new Date(year, month, 0).getDate();
+  const daysMonth: Table.Day[] = [];
+  for (let i = 1; i <= countDaysCurrentMonth; i++) {
+    let logDay = store.find(el => {
+      let elDate = new Date(el.date);
+      return elDate.getDate() === i && elDate.getMonth() + 1 === month && elDate.getFullYear() === year;
+    });
+    daysMonth.push({
+      day: i,
+      time: logDay ? logDay.time : null,
+      activeMount: true
+    });
+    logDay = null;
+  }
+
+  return addNextDays(year, month, addPrevDays(year, month, daysMonth));
 };
