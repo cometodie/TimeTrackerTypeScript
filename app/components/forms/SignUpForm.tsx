@@ -21,12 +21,12 @@ interface SignUpFormState {
   error: Error;
 }
 
-let nameField: TypeField;
-let emailField: TypeField;
-let passwdField: TypeField;
-let passwdConfField: TypeField;
-
 class SignUpForm extends React.Component<SignProps, SignUpFormState> {
+  private nameField: TypeField;
+  private emailField: TypeField;
+  private passwdField: TypeField;
+  private passwdConfField: TypeField;
+
   constructor(props: SignProps) {
     super(props);
     this.onSubmit = this.onSubmit.bind(this);
@@ -42,18 +42,18 @@ class SignUpForm extends React.Component<SignProps, SignUpFormState> {
   onSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (
-      passwdField.state.value === passwdConfField.state.value &&
-      nameField.state.valid &&
-      emailField.state.valid &&
-      passwdField.state.valid &&
-      passwdConfField.state.valid
+      this.passwdField.state.value === this.passwdConfField.state.value &&
+      this.nameField.state.valid &&
+      this.emailField.state.valid &&
+      this.passwdField.state.valid &&
+      this.passwdConfField.state.valid
     ) {
       this.setState(
         {
-          username: nameField.state.value,
-          email: emailField.state.value,
-          passwordOne: passwdField.state.value,
-          passwordTwo: passwdConfField.state.value
+          username: this.nameField.state.value,
+          email: this.emailField.state.value,
+          passwordOne: this.passwdField.state.value,
+          passwordTwo: this.passwdConfField.state.value
         },
         () => {
           auth
@@ -82,7 +82,7 @@ class SignUpForm extends React.Component<SignProps, SignUpFormState> {
         <TypeField
           value={username}
           ref={field => {
-            nameField = field;
+            this.nameField = field;
           }}
           validate={(name: string) => name.length > 2}
           type="text"
@@ -93,7 +93,7 @@ class SignUpForm extends React.Component<SignProps, SignUpFormState> {
         <TypeField
           value={email}
           ref={field => {
-            emailField = field;
+            this.emailField = field;
           }}
           validate={validateEmail}
           type="email"
@@ -104,7 +104,7 @@ class SignUpForm extends React.Component<SignProps, SignUpFormState> {
         <TypeField
           value={passwordOne}
           ref={field => {
-            passwdField = field;
+            this.passwdField = field;
           }}
           validate={validatePassword}
           type="password"
@@ -115,7 +115,7 @@ class SignUpForm extends React.Component<SignProps, SignUpFormState> {
         <TypeField
           value={passwordTwo}
           ref={field => {
-            passwdConfField = field;
+            this.passwdConfField = field;
           }}
           validate={validatePassword}
           name="ConfirmPassword"

@@ -17,10 +17,10 @@ interface SignInFormState {
   error: Error;
 }
 
-let emailField: TypeField;
-let passwdField: TypeField;
-
 class SignInForm extends React.Component<SignProps, SignInFormState> {
+  private emailField: TypeField;
+  private passwdField: TypeField;
+  
   constructor(props: SignProps) {
     super(props);
     this.onSubmit = this.onSubmit.bind(this);
@@ -35,8 +35,8 @@ class SignInForm extends React.Component<SignProps, SignInFormState> {
     event.preventDefault();
     this.setState(
       {
-        email: emailField.state.value,
-        password: passwdField.state.value
+        email: this.emailField.state.value,
+        password: this.passwdField.state.value
       },
       () => {
         auth
@@ -66,7 +66,7 @@ class SignInForm extends React.Component<SignProps, SignInFormState> {
         <TypeField
           value={email}
           ref={field => {
-            emailField = field;
+            this.emailField = field;
           }}
           type="email"
           name="EmailAddress"
@@ -76,7 +76,7 @@ class SignInForm extends React.Component<SignProps, SignInFormState> {
         <TypeField
           value={password}
           ref={field => {
-            passwdField = field;
+            this.passwdField = field;
           }}
           type="password"
           name="Password"
